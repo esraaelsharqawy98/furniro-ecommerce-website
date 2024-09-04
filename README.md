@@ -58,24 +58,62 @@ This will start the Vite development server and open the application in your def
 
 ```less
 
-src/
-  components/           // Reusable UI components
-    Header.jsx
-    Footer.jsx
-    CartMenu.jsx
-  layout/               // Layout-related components
-    Layout.jsx
-  pages/                // Page components
-    CategoryPage.jsx
-    ShopPage.jsx
-    ProductDetailsPage.jsx
-    CartPage.jsx
-    ContactPage.jsx
-  store/                // Zustand state management
-    cartStore.jsx
-  App.jsx               // Main application component with routing
-  index.css             // Global styles
-  index.js              // Entry point
+├── src/                         # Source files  
+│   │
+│   ├── components/              # Reusable UI components
+│   │   ├── CartMenu/            # cart menu component
+│   │   │   ├── CartMenu.jsx
+│   │   │   └── CartMenu.module.css
+│   │   ├── CartItem/            # Individual cart item component
+│   │   │   ├── CartItem.jsx
+│   │   │   └── CartItem.module.css
+│   │   ├── ProductImageCard/    # Product image card component
+│   │   │   ├── ProductImageCard.jsx
+│   │   │   └── ProductImageCard.module.css
+│   │   ├── ThumbnailGallery/    # Thumbnail gallery component
+│   │   │   ├── ThumbnailGallery.jsx
+│   │   │   └── ThumbnailGallery.module.css
+│   │   ├── ProductDescription/  # Product description component
+│   │   │   ├── ProductDescription.jsx
+│   │   │   └── ProductDescription.module.css
+│   │
+│   ├── layouts/                  # Layout components
+│   │   ├── Header/              # Header component
+│   │   │   ├── Header.jsx
+│   │   │   └── Header.module.css
+│   │   └── Footer/              # Footer component
+│   │       ├── Footer.jsx
+│   │       └── Footer.module.css
+│   │   └── Layout/           # Main layout component
+|   |       ├── Layout.jsx
+│   │       └── Layout.module.css
+│   │
+│   ├── pages/                   # Page components
+│   │   ├── CategoryPage/        # Category listing page
+│   │   │   ├── CategoryPage.jsx
+│   │   │   └── CategoryPage.module.css
+│   │   ├── ShopPage/            # Shop page with products
+│   │   │   ├── ShopPage.jsx
+│   │   │   └── ShopPage.module.css
+│   │   ├── ProductDetailsPage/  # Product details page
+│   │   │   ├── ProductDetailsPage.jsx
+│   │   │   └── ProductDetailsPage.module.css
+│   │   ├── CartPage/            # Cart page
+│   │   │   ├── CartPage.jsx
+│   │   │   └── CartPage.module.css
+│   │   └── ContactPage/         # Contact page
+│   │       ├── ContactPage.jsx
+│   │       └── ContactPage.module.css
+│   │
+│   ├── store/                   # Zustand store
+│   │   └── cartStore.js         # Cart-specific state management
+│   │
+│   ├── App.jsx                  # Main application component with routing
+│   ├── main.jsx                 # Entry point for Vite, rendering the App
+│   ├── index.css                # Global styles
+│   └── index.html               # HTML template
+│   └── vite.config.js           # Vite configuration
+  
   
 ```
 
