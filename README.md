@@ -57,9 +57,14 @@ This will start the Vite development server and open the application in your def
 ### Folder Structure
 
 ```less
-
+├── public/                         # public files  
+│   │
+│   ├── images/                                 
 ├── src/                         # Source files  
 │   │
+│   ├── api/              # api
+│   │   |──categoryApi.jsx       # catgory apis
+│   │   │──productApi.jsx        # product apis
 │   ├── components/              # Reusable UI components
 │   │   ├── CartMenu/            # cart menu component
 │   │   │   ├── CartMenu.jsx
@@ -67,47 +72,51 @@ This will start the Vite development server and open the application in your def
 │   │   ├── CartItem/            # Individual cart item component
 │   │   │   ├── CartItem.jsx
 │   │   │   └── CartItem.module.css
-│   │   ├── ProductImageCard/    # Product image card component
-│   │   │   ├── ProductImageCard.jsx
-│   │   │   └── ProductImageCard.module.css
-│   │   ├── ThumbnailGallery/    # Thumbnail gallery component
-│   │   │   ├── ThumbnailGallery.jsx
-│   │   │   └── ThumbnailGallery.module.css
-│   │   ├── ProductDescription/  # Product description component
-│   │   │   ├── ProductDescription.jsx
-│   │   │   └── ProductDescription.module.css
+│   │   ├── Banner/              # Banner component
+│   │   │   ├── Banner.jsx
+│   │   │   └── Banner.module.css
+│   │   ├── StarRating/    # StarRating component
+│   │   │   ├── StarRating.jsx
+│   │   │   └── StarRating.module.css
+│   │   ├── ProductDetails/  # Product details component
+│   │   │   ├── ProductDetails.jsx
+│   │   │   └── ProductDetails.module.css
 │   │
 │   ├── layouts/                  # Layout components
 │   │   ├── Header/              # Header component
 │   │   │   ├── Header.jsx
 │   │   │   └── Header.module.css
 │   │   └── Footer/              # Footer component
-│   │       ├── Footer.jsx
-│   │       └── Footer.module.css
+│   │   |   ├── Footer.jsx
+│   │   |    └── Footer.module.css
+│   │   ├── Features/              # Features component
+│   │   │   ├── Features.jsx
+│   │   │   └── Features.module.css
 │   │   └── Layout/           # Main layout component
 |   |       ├── Layout.jsx
 │   │       └── Layout.module.css
 │   │
 │   ├── pages/                   # Page components
-│   │   ├── CategoryPage/        # Category listing page
+│   │   ├── HomePage/        # Home Page with Categories
 │   │   │   ├── CategoryPage.jsx
 │   │   │   └── CategoryPage.module.css
 │   │   ├── ShopPage/            # Shop page with products
 │   │   │   ├── ShopPage.jsx
 │   │   │   └── ShopPage.module.css
-│   │   ├── ProductDetailsPage/  # Product details page
+│   │   ├── ProductDetailsPage/  # Product details page has product details and product image
 │   │   │   ├── ProductDetailsPage.jsx
 │   │   │   └── ProductDetailsPage.module.css
 │   │   ├── CartPage/            # Cart page
 │   │   │   ├── CartPage.jsx
 │   │   │   └── CartPage.module.css
-│   │   └── ContactPage/         # Contact page
+│   │   └── ContactPage/         # Contact page has contact form with yup validation
 │   │       ├── ContactPage.jsx
 │   │       └── ContactPage.module.css
 │   │
 │   ├── store/                   # Zustand store
 │   │   └── cartStore.js         # Cart-specific state management
-│   │
+│   │   └── productStore.js      # product-specific state management
+│   ├── App.css                  # Main application styles
 │   ├── App.jsx                  # Main application component with routing
 │   ├── main.jsx                 # Entry point for Vite, rendering the App
 │   ├── index.css                # Global styles
