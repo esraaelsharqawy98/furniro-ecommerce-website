@@ -1,0 +1,51 @@
+.banner {
+  width: 100%;
+  height: 19.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.bannerImage {
+  position: absolute;
+  background: url("/images/banner.jpeg") #d3d3d3 50% / cover no-repeat;
+  filter: blur(3px);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+  z-index: 1;
+}
+.logo{
+  width: 4.813rem;
+  height: 4.813rem;
+  display: block;
+}
+.title {
+  color: var(--black);
+  font-family: var(--ff-2);
+  font-size: 3rem;
+  font-weight: 500;
+}
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+.breadcrumb a {
+  color: var(--black);
+  font-family: var(--ff-2);
+  font-size: 1rem;
+  font-weight: 500;
+}
+.breadcrumb span {
+  color: var(--black);
+  font-family: var(--ff-2);
+  font-size: 1rem;
+  font-weight: 300;
+}
