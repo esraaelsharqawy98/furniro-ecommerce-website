@@ -64,6 +64,9 @@
   font-weight: 400;
   align-self: flex-start;
 }
+.submitButton:hover {
+    background-color: var(--dark-gold);
+}
 .error{
   display: block;
   color: var(--red);

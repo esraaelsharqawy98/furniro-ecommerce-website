@@ -16,6 +16,7 @@ html, body{
     --dark-gray:#9F9F9F;
     --light-bg:#F4F5F7;
     --gold:#B88E2F;
+    --dark-gold:#a17b23;
     --yellow:#FFC700;
     --red:#e74444;
     --ff-1:'Montserrat', sans-serif;
@@ -29,6 +30,7 @@ html, body{
 }
 a{
     text-decoration: none;
+    display: inline-block;
 }
 ul{
     list-style: none;
