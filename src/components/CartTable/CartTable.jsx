@@ -2,6 +2,8 @@ import React from 'react'
 import styles from './CartTable.module.css'
 import DeleteIcon from "/images/trash.svg";
 import { useCartStore } from "../../store/cartStore";
+import { formatCurrency } from "../../utils/formatCurrency";
+
 const CartTable = () => {
   const { cartItems, removeItem  , subtotal } = useCartStore();
   return (
@@ -31,13 +33,13 @@ const CartTable = () => {
                   <h3 className={styles.title}>{item.title}</h3>
                 </td>
                 <td>
-                  <p className={styles.price}>Rs. {item.price.toFixed(2)}</p>
+                  <p className={styles.price}>Rs. {formatCurrency(item.price)}</p>
                 </td>
                 <td>
                   <span className={styles.quantity}>{item.quantity}</span>
                 </td>
                 <td>
-                  <p className={styles.subtotal}>Rs. {itemSubtotal.toFixed(2)}</p>
+                  <p className={styles.subtotal}>Rs. {formatCurrency(itemSubtotal)}</p>
                 </td>
                 <td>
                   <button onClick={()=> removeItem(item.id)}>

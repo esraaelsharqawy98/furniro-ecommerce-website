@@ -3,7 +3,7 @@ import styles from "./ProductDetails.module.css";
 import StarRating from "../StarRating/StarRating";
 import { useCartStore } from "../../store/cartStore";
 import useProductStore from "../../store/productStore";
-
+import { formatCurrency } from "../../utils/formatCurrency";
 const ProductDetails = ({ product }) => {
   const { selectedQuantity, increaseQuantity, decreaseQuantity, setSelectedProduct } = useProductStore();
   const { addItem} = useCartStore();
@@ -22,7 +22,7 @@ const ProductDetails = ({ product }) => {
       <h2 id={`product-details-${product.id}`} className={styles.title}>
         {product.title}
       </h2>
-      <p className={styles.price}>${product.price.toFixed(2)}</p>
+      <p className={styles.price}>Rs {formatCurrency(product.price)}</p>
       <StarRating rating={product.rating.rate} count={product.rating.count} />
       <p className={styles.description}>{product.description}</p>
       <div className={styles.container}>

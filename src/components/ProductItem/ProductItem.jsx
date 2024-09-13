@@ -3,6 +3,7 @@ import styles from "./ProductItem.module.css";
 import { Link } from "react-router-dom";
 import { useProductStore } from "../../store/productStore";
 import { useCartStore } from "../../store/cartStore";
+import { formatCurrency } from "../../utils/formatCurrency";
 
 const ProductItem = ({ product }) => {
   const { setSelectedProduct} = useProductStore();
@@ -42,7 +43,7 @@ const ProductItem = ({ product }) => {
           </h2>
         </Link>
         <p className={styles.category}>{product.category}</p>
-        <p className={styles.price}>${product.price.toFixed(2)}</p>
+        <p className={styles.price}>Rs. {formatCurrency(product.price)}</p>
       </div>
     </div>
   );

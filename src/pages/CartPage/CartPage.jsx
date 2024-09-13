@@ -3,6 +3,8 @@ import Banner from "../../components/Banner/Banner";
 import styles from "./CartPage.module.css";
 import CartTable from "../../components/CartTable/CartTable";
 import { useCartStore } from "../../store/cartStore";
+import { formatCurrency } from "../../utils/formatCurrency";
+
 const CartPage = () => {
   const {total , subtotal} = useCartStore();
 
@@ -16,10 +18,10 @@ const CartPage = () => {
             <h2 className={styles.cartTotalsTitle}>Cart Totals</h2>
             <p className={styles.subtotalText}>
               Subtotal
-              <span className={styles.subtotalAmount}>Rs. {subtotal.toFixed(2)}</span>
+              <span className={styles.subtotalAmount}>Rs. {formatCurrency(subtotal)}</span>
             </p>
             <p className={styles.totalText}>
-              Total <span className={styles.totalAmount}>Rs. {total.toFixed(2)}</span>
+              Total <span className={styles.totalAmount}>Rs. {formatCurrency(total)}</span>
             </p>
             <button className={styles.checkoutButton}>Check Out</button>
           </div>

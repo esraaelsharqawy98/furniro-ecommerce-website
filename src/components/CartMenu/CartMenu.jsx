@@ -4,6 +4,7 @@ import shoppingIcon from "/images/shopping.svg";
 import CartItem from "../CartItem/CartItem";
 import { Link } from "react-router-dom";
 import { useCartStore } from "../../store/cartStore";
+import { formatCurrency } from "../../utils/formatCurrency";
 
 const CartMenu = ({ isCartMenuOpen, toggleCartMenu }) => {
   const { cartItems , subtotal} = useCartStore();
@@ -37,7 +38,7 @@ const CartMenu = ({ isCartMenuOpen, toggleCartMenu }) => {
         <div className={styles.menuFooter}>
           <div className={styles.subtotal}>
             <h3 className={styles.subtitle}>Subtotal</h3>
-            <p className={styles.price}>Rs. {subtotal.toFixed(2)}</p>
+            <p className={styles.price}>Rs. {formatCurrency(subtotal)}</p>
           </div>
           <div className={styles.line}></div>
           <Link to="/cart" className={styles.cartBtn} onClick={toggleCartMenu}>

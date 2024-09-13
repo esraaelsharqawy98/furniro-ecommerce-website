@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './CartItem.module.css'
 import deleteIcon from '/images/delete.svg'
 import  {useCartStore}  from '../../store/cartStore'
+import { formatCurrency } from "../../utils/formatCurrency";
 const CartItem = ({item}) => {
   const {removeItem} = useCartStore();
   const handleRemove = () => {
@@ -17,7 +18,7 @@ const CartItem = ({item}) => {
         </div>
         <div className={styles.cartDetails}>
             <h3 className={styles.productName}>{item.title}</h3>
-            <p className={styles.subtotal}>{item.quantity} x <span className={styles.price}>Rs {item.price.toFixed(2)}</span></p>
+            <p className={styles.subtotal}>{item.quantity} x <span className={styles.price}>Rs {formatCurrency(item.price)}</span></p>
         </div>
     </div>
   )
