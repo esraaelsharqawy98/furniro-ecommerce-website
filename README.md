@@ -15,7 +15,7 @@ A modern eCommerce application built with React, Zustand for state management, a
 
 ### Features
 
-   - Category Page: Display a list of product categories.
+   - Home Page: Display a list of product categories.
    - Shop Page: List of products with filtering and sorting options.
    - Product Details Page: Detailed view of a product with images and description.
    - Cart Page: View and manage items in the shopping cart.
@@ -75,6 +75,12 @@ This will start the Vite development server and open the application in your def
 │   │   ├── Banner/              # Banner component
 │   │   │   ├── Banner.jsx
 │   │   │   └── Banner.module.css
+│   │   ├── ContactForm/              # ContactForm component
+│   │   │   ├── ContactForm.jsx
+│   │   │   └── ContactForm.module.css
+│   │   ├── CartTable/              # CartTable component
+│   │   │   ├── CartTable.jsx
+│   │   │   └── CartTable.module.css
 │   │   ├── StarRating/    # StarRating component
 │   │   │   ├── StarRating.jsx
 │   │   │   └── StarRating.module.css
@@ -82,22 +88,22 @@ This will start the Vite development server and open the application in your def
 │   │   │   ├── ProductDetails.jsx
 │   │   │   └── ProductDetails.module.css
 │   │
-│   ├── layouts/                  # Layout components
-│   │   ├── Header/              # Header component
+│   ├── layouts/                   # Layout components
+│   │   ├── Header/                # Header component
 │   │   │   ├── Header.jsx
 │   │   │   └── Header.module.css
-│   │   └── Footer/              # Footer component
+│   │   └── Footer/                # Footer component
 │   │   |   ├── Footer.jsx
 │   │   |    └── Footer.module.css
 │   │   ├── Features/              # Features component
 │   │   │   ├── Features.jsx
 │   │   │   └── Features.module.css
-│   │   └── Layout/           # Main layout component
+│   │   └── Layout/               # Main layout component
 |   |       ├── Layout.jsx
 │   │       └── Layout.module.css
 │   │
 │   ├── pages/                   # Page components
-│   │   ├── HomePage/        # Home Page with Categories
+│   │   ├── HomePage/            # Home Page with Categories
 │   │   │   ├── CategoryPage.jsx
 │   │   │   └── CategoryPage.module.css
 │   │   ├── ShopPage/            # Shop page with products
@@ -112,6 +118,9 @@ This will start the Vite development server and open the application in your def
 │   │   └── ContactPage/         # Contact page has contact form with yup validation
 │   │       ├── ContactPage.jsx
 │   │       └── ContactPage.module.css
+│   │
+│   ├── validators/                      # validator
+│   │   └── ContactValidation.js         # Contact form validation with yup
 │   │
 │   ├── store/                   # Zustand store
 │   │   └── cartStore.js         # Cart-specific state management
