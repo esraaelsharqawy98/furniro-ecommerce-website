@@ -65,9 +65,6 @@ const Footer = () => {
             <div className={styles.subscribe}>
               <h5>Newsletter</h5>
               <form className={styles.inputGroup}>
-                <label htmlFor="email" className="sr-only">
-                  Enter Your Email Address
-                </label>
                 <input
                   type="email"
                   id="email"
