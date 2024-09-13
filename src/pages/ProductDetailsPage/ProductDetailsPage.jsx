@@ -12,7 +12,10 @@ const ProductDetailsPage = () => {
       fetchProductById(id);
     }
   }, [id, selectedProduct, fetchProductById]);
-
+  
+  if (!selectedProduct) {
+    return <div>Loading product details...</div>;
+  }
   return (
     <>
       <Breadcrumb productname={selectedProduct.title}/>

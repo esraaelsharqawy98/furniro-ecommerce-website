@@ -5,16 +5,11 @@ import { useCartStore } from "../../store/cartStore";
 import useProductStore from "../../store/productStore";
 import { formatCurrency } from "../../utils/formatCurrency";
 const ProductDetails = ({ product }) => {
-  const { selectedQuantity, increaseQuantity, decreaseQuantity, setSelectedProduct } = useProductStore();
+  const { selectedQuantity, increaseQuantity, decreaseQuantity } = useProductStore();
   const { addItem} = useCartStore();
-
-  useEffect(() => {
-    setSelectedProduct(product);
-  }, [product, setSelectedProduct]);
 
   const handleAddToCart = () => {
     addItem(product , selectedQuantity);
-    console.log(`Product added with quantity: ${selectedQuantity}`);
   };
 
   return (
