@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+.star {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--yellow);
+}
+.count {
+  color: var(--dark-gray);
+  font-family: var(--ff-2);
+  font-size: 1rem;
+  font-weight: 400;
+}

@@ -4,10 +4,11 @@ import CartIcon from "/images/icon-cart.svg";
 import LogoImg from "/images/logo.svg";
 import styles from "./Header.module.css";
 import CartMenu from "../../components/CartMenu/CartMenu";
-
+import { useCartStore } from "../../store/cartStore";
 const Header = () => {
   const [isCartMenuOpen, setIsCartMenuOpen] = useState(false);
   const isCartPage = useLocation().pathname === "/cart";
+  const {cartItems} = useCartStore();
   
   const toggleCartMenu = () => {
      if (!isCartPage) {
@@ -51,7 +52,8 @@ const Header = () => {
           aria-controls="cart-menu"
           aria-label="Toggle Cart Menu"
         >{
-          !isCartPage &&  <span className={styles.cartCount}>0</span>
+          !isCartPage && cartItems.length > 0 && 
+          (<span className={styles.cartCount}>{cartItems.length}</span>)
         }
           <img src={CartIcon} alt="Shopping cart" className={styles.cartImg} />
         </button>

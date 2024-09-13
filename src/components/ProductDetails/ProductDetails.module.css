@@ -1,0 +1,107 @@
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.title {
+  color: var(--black);
+  font-family: var(--ff-2);
+  font-size: 2.2rem;
+  font-weight: 400;
+  max-width: 25rem;
+}
+.price {
+  color: var(--dark-gray);
+  font-family: var(--ff-2);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.description {
+  color: var(--black);
+  font-family: var(--ff-2);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  max-width: 26.5rem;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 1.5rem;
+}
+.quantityContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  border-radius: 0.625rem;
+  border: 1px solid var(--dark-gray);
+  background: var(--white);
+  padding: 0 1rem;
+}
+.quantityButton {
+  color: var(--black);
+  font-family: var(--ff-2);
+  font-size: 1rem;
+  font-weight: 400;
+}
+.quantity {
+  color: var(--black);
+  font-family: var(--ff-2);
+  font-size: 1rem;
+  font-weight: 500;
+}
+.addToCart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  border-radius: 0.9375rem;
+  border: 1px solid var(--black);
+  color: var(--black);
+  font-family: var(--ff-2);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.line {
+  max-width: 37.81331rem;
+  width: 100%;
+  height: 0.0625rem;
+  background-color: var(--light-gray);
+  margin: 2.5rem 0 1.5rem;
+}
+.category{
+  color: var(--dark-gray);
+font-family: var(--ff-2);
+font-size: 1rem;
+font-weight: 400;
+display: flex;
+align-items: center;
+column-gap: 1rem;
+}
+@media screen and (min-width: 480px) {
+  .container {
+    flex-direction: row;
+    align-items: center;
+    column-gap: 1.5rem;
+  }
+  .quantityContainer{
+    width: 7.6875rem;
+  }
+  .addToCart{
+    width: 13.4375rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .title {
+    font-size: 2.625rem;
+  }
+  .price {
+    font-size: 1.5rem;
+  }
+  .description {
+    max-width: 26.5rem;
+  }
+}

@@ -2,12 +2,18 @@ import React from "react";
 import styles from "./ProductItem.module.css";
 import { Link } from "react-router-dom";
 import { useProductStore } from "../../store/productStore";
+import { useCartStore } from "../../store/cartStore";
 
 const ProductItem = ({ product }) => {
-  const { setSelectedProduct } = useProductStore();
+  const { setSelectedProduct} = useProductStore();
+  const {addItem} = useCartStore();
 
-  const handleOnClick = () => {
+  const handleProductSelect = () => {
     setSelectedProduct(product);
+  };
+
+  const handleAddToCart = () => {
+    addItem(product,1)
   };
 
   return (
@@ -18,6 +24,7 @@ const ProductItem = ({ product }) => {
           <button
             className={styles.addToCart}
             aria-label={`Add ${product.title} to cart`}
+            onClick={handleAddToCart}
           >
             Add To Cart
           </button>
@@ -27,10 +34,12 @@ const ProductItem = ({ product }) => {
         <Link
           to={`/product/${product.id}`}
           className={styles.link}
-          onClick={handleOnClick}
-          aria-label={`View details for ${product.title}`}
+          onClick={handleProductSelect}
+          aria-labelledby={`product-title-${product.id}`}
         >
-          <h2 className={styles.productTitle}>{product.title}</h2>
+          <h2 id={`product-title-${product.id}`} className={styles.productTitle}>
+            {product.title}
+          </h2>
         </Link>
         <p className={styles.category}>{product.category}</p>
         <p className={styles.price}>${product.price.toFixed(2)}</p>

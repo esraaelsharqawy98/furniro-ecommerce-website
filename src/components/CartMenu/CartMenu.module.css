@@ -1,0 +1,122 @@
+.CartMenu {
+  position: fixed;
+  top: 0;
+  right: -550px;
+  width:19.75rem;
+  height: 46.625rem;
+  background-color: var(--white);
+  transition: right 0.3s ease;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.menuOpen {
+  right: 0;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.20);
+  opacity: 1;
+  z-index: 9;
+}
+.container {
+  margin: 1.35rem 2.31rem 0 1.69rem;
+  position: relative;
+  height: 100%;
+}
+.title {
+  color: var(--black);
+  font-family: var(--ff-2);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.line {
+  width: 17.9375rem;
+  height: 0.0625rem;
+  background-color: var(--light-gray);
+  margin: 1.5rem 0;
+}
+.btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.cartBody {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  max-height: calc(100% - 5rem);
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  position: relative;
+  height: 100%;
+}
+.emptyMessage{
+  font-size: 1.2rem;
+  font-family: var(--ff-2);
+  font-weight: 400;
+  color: var(--dark-gray);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.scrollable {
+  max-height: 30rem;
+}
+.cartBody::-webkit-scrollbar {
+  width: 6px;
+}
+.cartBody::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.20);
+  border-radius: 4px;
+}
+.menuFooter {
+  width: 100%;
+  padding: 1rem 0 1.75rem 0;
+  background-color: var(--white);
+}
+.menuFooter .line {
+  width: 100%;
+}
+.subtotal {
+  padding: 0 2.31rem 0 1.69rem;
+  display: flex;
+  justify-content: space-between;
+}
+.subtitle {
+  color: var(--black);
+  font-family: var(--ff-2);
+  font-size: 1rem;
+  font-weight: 400;
+}
+.price {
+  color: #b88e2f;
+  font-family: var(--ff-2);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.cartBtn {
+  margin-left: 1.69rem;
+  padding: 0.375rem 1.875rem;
+  border-radius: 3.125rem;
+  border: 1px solid var(--black);
+  color: var(--black);
+  font-family: var(--ff-2);
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+@media screen and (min-width:576px) {
+     .CartMenu{
+      width: 26.0625rem;
+     }
+     .subtotal{
+        padding-right: 6rem;
+     }
+}
