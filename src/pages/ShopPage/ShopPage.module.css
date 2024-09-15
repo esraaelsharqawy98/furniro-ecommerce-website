@@ -46,7 +46,6 @@
 @media screen and (min-width: 576px) {
   .container {
     flex-direction: row;
-    justify-content: space-between;
   }
 }
 @media screen and (min-width: 768px) {

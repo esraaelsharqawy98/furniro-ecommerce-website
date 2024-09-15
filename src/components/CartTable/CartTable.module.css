@@ -1,15 +1,12 @@
 table {
   width: 100%;
   height: fit-content;
-  border-spacing: 0;
-  overflow-x: auto;
+  border-collapse: collapse;
+  width: 100%;
 }
 thead {
   height: 3.4375rem;
   background-color: var(--powdered);
-}
-tbody tr td {
-  padding: 3rem 0;
 }
 th {
   color: var(--black);
@@ -18,17 +15,29 @@ th {
   font-weight: 500;
   text-align: left;
 }
-table .title {
+td {
+  vertical-align: top;
+  height: fit-content;
+}
+.headerImg {
+  width: 6.25rem;
+}
+table .title,
+table .price,
+table .quantity,
+table .subtotal {
   color: var(--dark-gray);
   font-family: var(--ff-2);
   font-size: 1rem;
   font-weight: 400;
 }
-table .price {
-  color: var(--dark-gray);
-  font-family: var(--ff-2);
-  font-size: 1rem;
-  font-weight: 400;
+table .title,
+table .price,
+table .quantity,
+table .subtotal,
+table .delete,
+table .image {
+  margin: 3rem 0;
 }
 table .quantity {
   width: 2rem;
@@ -39,41 +48,96 @@ table .quantity {
   border-radius: 0.3125rem;
   border: 1px solid var(--dark-gray);
   color: var(--black);
-  font-family: var(--ff-2);
-  font-size: 1rem;
-  font-weight: 400;
   margin-left: 1rem;
 }
-table .subtotal {
-  color: var(--black);
-  font-family: var(--ff-2);
-  font-size: 1rem;
-  font-weight: 400;
+.cartImg {
+  padding-right: 1rem;
 }
 .image {
-  width: 6.5625rem;
-  height: 6.5625rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 0.625rem;
 }
 .delete {
   width: 1.75rem;
   height: 1.75rem;
 }
+.emptyCart p {
+  color: var(--dark-gray);
+  font-family: var(--ff-2);
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 1rem 0;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  table {
+    display: block;
+  }
+  thead {
+    display: none;
+  }
+  tbody {
+    display: block;
+  }
+  table .title,
+  table .price,
+  table .quantity,
+  table .subtotal,
+  table .delete {
+    margin: 0 0 1rem;
+  }
+  table tbody td:not(.cartImg) {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  tbody > tr {
+    display: block;
+    position: relative;
+    padding-left: 120px;
+  }
+  tbody .cartImg {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  table .image {
+    width: 100%;
+    height: 100%;
+    margin: 0 0 3rem;
+  }
+  table .quantity {
+    margin: 0;
+  }
+  .deleteBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
 @media screen and (min-width: 1200px) {
-    table {
-      width: 67%;
-    }
-    table .image {
-      width: 4.5625rem;
-      height: 4.5625rem;
-    }
+  table {
+    width: 67%;
   }
-  @media screen and (min-width: 1400px) {
-    table {
-      width: 51.0625rem;
-    }
-    table .image {
-      width: 6.5625rem;
-      height: 6.5625rem;
-    }
+  table .image {
+    width: 4.5625rem;
+    height: 4.5625rem;
   }
+  .emptyCart p {
+    font-size: 1.5rem;
+    margin: 3rem 0;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  table {
+    width: 51.0625rem;
+  }
+  table .image {
+    width: 6.5625rem;
+    height: 6.5625rem;
+  }
+}

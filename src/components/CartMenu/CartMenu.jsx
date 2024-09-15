@@ -30,7 +30,7 @@ const CartMenu = ({ isCartMenuOpen, toggleCartMenu }) => {
               <p className={styles.emptyMessage}>Cart is empty</p>
             ) : (
               cartItems.map((item) => (
-                <CartItem key={item.id} item={item} />
+                <CartItem key={item.id} item={item} toggleCartMenu={toggleCartMenu}/>
               ))
             )}
           </div>
