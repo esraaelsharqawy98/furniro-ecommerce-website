@@ -33,22 +33,6 @@ export const useCartStore = create((set) => ({
 
 
   })},
-
-  updateQuantity: (productId, quantity) => {
-    set((state) => ({
-      cartItems: state.cartItems.map((item) =>
-        item.id === productId ? { ...item, quantity } : item
-      ),
-    }));
-    const newSubtotal = newCartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-      const newTotal = newSubtotal;
-
-      return {
-        cartItems: newCartItems,
-        subtotal: newSubtotal,
-        total: newTotal,
-      };
-  },
   removeItem: (productId) =>
   set((state) => {
     const newCartItems = state.cartItems.filter(item => item.id !== productId);

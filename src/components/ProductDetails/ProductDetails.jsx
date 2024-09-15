@@ -11,7 +11,6 @@ const ProductDetails = ({ product }) => {
   const handleAddToCart = () => {
     addItem(product , selectedQuantity);
   };
-
   return (
     <section className={styles.productInfo} aria-labelledby={`product-details-${product.id}`}>
       <h2 id={`product-details-${product.id}`} className={styles.title}>
