@@ -37,7 +37,7 @@ table .quantity,
 table .subtotal,
 table .delete,
 table .image {
-  margin: 3rem 0;
+  margin: 3rem 0 0;
 }
 table .quantity {
   width: 2rem;
@@ -87,6 +87,9 @@ table .quantity {
   table .delete {
     margin: 0 0 1rem;
   }
+  table .title{
+    width: 12rem;
+  }
   table tbody td:not(.cartImg) {
     display: flex;
     flex-wrap: wrap;
@@ -103,11 +106,12 @@ table .quantity {
     position: absolute;
     top: 0;
     left: 0;
+    padding: 0;
   }
   table .image {
     width: 100%;
     height: 100%;
-    margin: 0 0 3rem;
+    margin: 0;
   }
   table .quantity {
     margin: 0;
@@ -129,6 +133,9 @@ table .quantity {
   .emptyCart p {
     font-size: 1.5rem;
     margin: 3rem 0;
+  }
+  table .title{
+    width: 15rem;
   }
 }
 

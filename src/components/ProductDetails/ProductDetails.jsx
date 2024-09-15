@@ -5,12 +5,21 @@ import { useCartStore } from "../../store/cartStore";
 import useProductStore from "../../store/productStore";
 import { formatCurrency } from "../../utils/formatCurrency";
 const ProductDetails = ({ product }) => {
-  const { selectedQuantity, increaseQuantity, decreaseQuantity } = useProductStore();
+  const { selectedQuantity, increaseQuantity, decreaseQuantity , updateQuantity } = useProductStore();
   const { addItem} = useCartStore();
 
   const handleAddToCart = () => {
     addItem(product , selectedQuantity);
   };
+  const handleIncreaseQuantity = () => {
+    increaseQuantity();
+    updateQuantity(product.id, selectedQuantity); 
+  };
+
+  const handleDecreaseQuantity = () => {
+    decreaseQuantity();
+    updateQuantity(product.id, selectedQuantity); 
+  }
   return (
     <section className={styles.productInfo} aria-labelledby={`product-details-${product.id}`}>
       <h2 id={`product-details-${product.id}`} className={styles.title}>
@@ -23,7 +32,7 @@ const ProductDetails = ({ product }) => {
         <div className={styles.quantityContainer}>
           <button
             className={styles.quantityButton}
-            onClick={decreaseQuantity}
+            onClick={handleDecreaseQuantity}
             aria-label="Decrease quantity"
           >
             -
@@ -33,7 +42,7 @@ const ProductDetails = ({ product }) => {
           </span>
           <button
             className={styles.quantityButton}
-            onClick={increaseQuantity}
+            onClick={handleIncreaseQuantity}
             aria-label="Increase quantity"
           >
             +
