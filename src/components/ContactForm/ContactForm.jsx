@@ -47,6 +47,10 @@ const ContactForm = () => {
     }
   };
 
+  const getInputClassName = (inputName) => {
+    return errors[inputName] ? `${styles.input} ${styles.inputError}` : styles.input;
+  };
+
   return (
     <form onSubmit={handleOnSubmit} className={styles.contactForm}>
       <div className={styles.formGroup}>
@@ -58,7 +62,7 @@ const ContactForm = () => {
           name='name'
           value={formData.name}
           onChange={handleOnChange}
-          className={styles.input}
+          className={getInputClassName('name')}
         />
         <span className={styles.error}>{errors.name}</span>
       </div>
@@ -72,7 +76,7 @@ const ContactForm = () => {
           name='email'
           value={formData.email}
           onChange={handleOnChange}
-          className={styles.input}
+          className={getInputClassName('email')}
         />
         <span className={styles.error}>{errors.email}</span>
       </div>
@@ -86,7 +90,7 @@ const ContactForm = () => {
           name='subject'
           value={formData.subject}
           onChange={handleOnChange}
-          className={styles.input}
+          className={getInputClassName('subject')}
         />
         <span className={styles.error}>{errors.subject}</span>
       </div>
@@ -101,7 +105,7 @@ const ContactForm = () => {
           onChange={handleOnChange}
           cols="30"
           rows="10"
-          className={styles.textarea}
+          className={errors.message ? `${styles.textarea} ${styles.inputError}` : styles.textarea}
         />
         <span className={styles.error}>{errors.message}</span>
       </div>
