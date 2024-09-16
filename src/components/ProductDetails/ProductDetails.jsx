@@ -1,25 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./ProductDetails.module.css";
 import StarRating from "../StarRating/StarRating";
 import { useCartStore } from "../../store/cartStore";
-import useProductStore from "../../store/productStore";
 import { formatCurrency } from "../../utils/formatCurrency";
+
 const ProductDetails = ({ product }) => {
-  const { selectedQuantity, increaseQuantity, decreaseQuantity , updateQuantity } = useProductStore();
-  const { addItem} = useCartStore();
+  const { addItem, updateQuantity, cartItems } = useCartStore();
+  const [localQuantity, setLocalQuantity] = useState(1);
+
+  useEffect(() => {
+    const productInCart = cartItems.find((item) => item.id === product.id);
+    if (productInCart) {
+      setLocalQuantity(productInCart.quantity);
+    } else {
+      setLocalQuantity(1);
+    }
+  }, [cartItems, product.id]);
 
   const handleAddToCart = () => {
-    addItem(product , selectedQuantity);
+    if (cartItems.some((item) => item.id === product.id)) {
+      updateQuantity(product.id, localQuantity);
+    } else {
+      addItem(product, localQuantity);
+    }
   };
+
   const handleIncreaseQuantity = () => {
-    increaseQuantity();
-    updateQuantity(product.id, selectedQuantity); 
+    setLocalQuantity((prevQuantity) => prevQuantity + 1);
   };
 
   const handleDecreaseQuantity = () => {
-    decreaseQuantity();
-    updateQuantity(product.id, selectedQuantity); 
-  }
+    setLocalQuantity((prevQuantity) => Math.max(1, prevQuantity - 1));
+  };
+
   return (
     <section className={styles.productInfo} aria-labelledby={`product-details-${product.id}`}>
       <h2 id={`product-details-${product.id}`} className={styles.title}>
@@ -38,7 +51,7 @@ const ProductDetails = ({ product }) => {
             -
           </button>
           <span className={styles.quantity} aria-live="polite">
-            {selectedQuantity}
+            {localQuantity}
           </span>
           <button
             className={styles.quantityButton}

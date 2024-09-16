@@ -7,16 +7,21 @@ import { formatCurrency } from "../../utils/formatCurrency";
 
 const ProductItem = ({ product }) => {
   const { setSelectedProduct} = useProductStore();
-  const {addItem} = useCartStore();
+  const { addItem , cartItems , updateQuantity} = useCartStore();
+  const productInCart = cartItems.find((item) => item.id === product.id);
+  const currentQuantity = productInCart ? productInCart.quantity : 1;
 
   const handleProductSelect = () => {
     setSelectedProduct(product);
   };
 
   const handleAddToCart = () => {
-    addItem(product,1)
+    if (productInCart) {
+      updateQuantity(product.id, currentQuantity + 1);
+    } else {
+      addItem(product, 1);
   };
-
+  }
   return (
     <div className={styles.product} role="region" aria-labelledby={`product-${product.id}`}>
       <div className={styles.productImg}>

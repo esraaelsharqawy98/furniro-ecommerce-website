@@ -7,7 +7,6 @@ export const useProductStore = create((set) => ({
   currentPage: 1,
   totalPages: 1,
   selectedProduct: null,
-  selectedQuantity: 1,
   fetchAllProducts: async (page = 1) => {
     try {
       const allProducts = await fetchProducts();
@@ -51,11 +50,7 @@ export const useProductStore = create((set) => ({
     }
   },
   setSelectedProduct: (product) => set({ selectedProduct: product }),
-  setQuantity: (quantity) => set({ selectedQuantity: quantity }),
-  increaseQuantity: () => set((state) => ({ selectedQuantity: state.selectedQuantity + 1 })),
-  decreaseQuantity: () => set((state) => ({
-    selectedQuantity: Math.max(1, state.selectedQuantity - 1),
-  })),
+ 
 }));
 
 export default useProductStore;

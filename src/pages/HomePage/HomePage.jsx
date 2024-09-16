@@ -5,10 +5,10 @@ import { fetchCategories } from "../../api/categoryApi";
 import { Link } from "react-router-dom";
 
 const categoryImages = {
-  "jewelery": "/images/jewelery.jpg",
-  "electronics": "/images/electronics.jpg",
-  "women's clothing": "/images/women.jpg",
-  "men's clothing": "/images/men.jpg",
+  "jewelery": "/images/jewelery.webp",
+  "electronics": "/images/electronics.webp",
+  "women's clothing": "/images/women.webp",
+  "men's clothing": "/images/men.webp",
 };
 const categoryDefaultImg = '/images/default-category.jpg';
 const HomePage = () => {
