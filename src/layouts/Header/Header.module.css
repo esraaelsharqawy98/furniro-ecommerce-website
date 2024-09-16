@@ -11,6 +11,9 @@
     padding: 1.86rem 1rem 1.92rem;
     position: relative;
 }
+nav{
+  display: none;
+}
 .logo {
   display: flex;
   align-items: flex-end;
@@ -58,6 +61,14 @@
   font-size: .8rem;
   font-weight: 700;
   color: var(--white);
+}
+@media screen and (min-width: 576px) {
+    nav{
+      display: block;
+    }
+    .mobileMenuButton{
+        display: none;
+    }
 }
 @media screen and (min-width: 768px) {
   .container{
