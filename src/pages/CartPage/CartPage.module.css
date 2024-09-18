@@ -13,10 +13,12 @@
 
 .cartTotals {
   width: 100%;
+  height: 24.375rem;
   padding: 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: stretch;
   background-color: var(--powdered);
 }
 .cartTotalsTitle {
@@ -60,7 +62,7 @@
   font-family: var(--ff-2);
   font-size: 1.25rem;
   font-weight: 400;
-  margin: 3rem 0 5rem;
+  margin: 3rem 0 0;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -88,6 +90,19 @@
 .checkoutButton:hover::before{
   transform: rotate3d(0,0,1,0) translateZ(0);
 }
+.empty{
+  width: 100%;
+  height: fit-content;
+  background-color: var(--powdered);
+}
+.empty p {
+  color: var(--dark-gray);
+  font-family: var(--ff-2);
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 3rem 0;
+  text-align: center;
+}
 @media screen and (min-width: 480px) {
   .cartTotals {
     width: 24.5625rem;
@@ -114,6 +129,12 @@
   }
   .cartTotals {
     width: 30%;
+  }
+  .empty{
+    width: 60%;
+  }
+  .empty p {
+    font-size: 1.5rem;
   }
 }
 @media screen and (min-width: 1400px) {

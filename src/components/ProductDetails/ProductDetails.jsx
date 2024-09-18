@@ -6,36 +6,36 @@ import { formatCurrency } from "../../utils/formatCurrency";
 
 const ProductDetails = ({ product }) => {
   const { addItem, updateQuantity, cartItems } = useCartStore();
-  const [localQuantity, setLocalQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     const productInCart = cartItems.find((item) => item.id === product.id);
     if (productInCart) {
-      setLocalQuantity(productInCart.quantity);
+      setQuantity(productInCart.quantity);
     } else {
-      setLocalQuantity(1);
+      setQuantity(1);
     }
   }, [cartItems, product.id]);
 
   const handleAddToCart = () => {
     if (cartItems.some((item) => item.id === product.id)) {
-      updateQuantity(product.id, localQuantity);
+      updateQuantity(product.id, quantity);
     } else {
-      addItem(product, localQuantity);
+      addItem(product, quantity);
     }
   };
 
   const handleIncreaseQuantity = () => {
-    setLocalQuantity((prevQuantity) => prevQuantity + 1);
+    setQuantity((prevQuantity) => prevQuantity + 1);
   };
 
   const handleDecreaseQuantity = () => {
-    setLocalQuantity((prevQuantity) => Math.max(1, prevQuantity - 1));
+    setQuantity((prevQuantity) => Math.max(1, prevQuantity - 1));
   };
 
   return (
-    <section className={styles.productInfo} aria-labelledby={`product-details-${product.id}`}>
-      <h2 id={`product-details-${product.id}`} className={styles.title}>
+    <section className={styles.productInfo}>
+      <h2 className={styles.title}>
         {product.title}
       </h2>
       <p className={styles.price}>Rs {formatCurrency(product.price)}</p>
@@ -46,17 +46,15 @@ const ProductDetails = ({ product }) => {
           <button
             className={styles.quantityButton}
             onClick={handleDecreaseQuantity}
-            aria-label="Decrease quantity"
           >
             -
           </button>
-          <span className={styles.quantity} aria-live="polite">
-            {localQuantity}
+          <span className={styles.quantity}>
+            {quantity}
           </span>
           <button
             className={styles.quantityButton}
             onClick={handleIncreaseQuantity}
-            aria-label="Increase quantity"
           >
             +
           </button>
@@ -64,7 +62,6 @@ const ProductDetails = ({ product }) => {
         <button
           className={styles.addToCart}
           onClick={handleAddToCart}
-          aria-label={`Add ${product.title} to cart`}
         >
           Add to cart
         </button>

@@ -18,13 +18,46 @@ th {
 .headerImg {
   width: 6.25rem;
 }
-.emptyCart p {
-  color: var(--dark-gray);
+.cartButton{
+  width: 13.875rem;
+  height: 3.68463rem;
+  border-radius: 0.9375rem;
+  border: 1px solid var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--black);
   font-family: var(--ff-2);
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 400;
-  margin: 1rem 0;
-  text-align: center;
+  margin: 3rem 0 5rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin: 0 auto;
+}
+.cartButton:hover{
+  border-color: var(--gold);
+  color: var(--white);
+}
+.cartButton::before{
+  content: "";
+  display: block;
+  position: absolute;
+  background: var(--gold);
+  width: 120%;
+  height: 110%;
+  top: 0;
+  left: 0;
+  left: 0;
+  transform: rotate3d(0,0,1,4deg) translate3d(-1em,108%,0);
+  transform-origin: 0% 100%;
+  will-change: transform;
+  z-index: -1;
+  transition: transform .2s cubic-bezier(.17,.67,.83,.67);
+}
+.cartButton:hover::before{
+  transform: rotate3d(0,0,1,0) translateZ(0);
 }
 @media screen and (max-width: 768px) {
   table {
@@ -37,13 +70,12 @@ th {
     display: block;
   }
 }
+@media screen and (min-width: 768px) {
+  
+}
 @media screen and (min-width: 1200px) {
   table {
     width: 67%;
-  }
-  .emptyCart p {
-    font-size: 1.5rem;
-    margin: 3rem 0;
   }
 }
 

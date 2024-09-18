@@ -1,16 +1,18 @@
 .cartItem {
     width: 100%;
     display: flex;
-    column-gap: 1rem;
-    position: relative;
+    flex-direction: column;
   }
   
   .btn {
-    position: absolute;
-    top: 0;
-    right: 0;
+    width: 24px;
+    height: 24px;
+    align-self: flex-end;
   }
-  
+  .wrapper{
+    display: flex;
+    column-gap: 1rem;
+  }
   .cartImage {
     width: 4.625rem;
     height: 4.625rem;
@@ -21,9 +23,8 @@
   
   .cartImage img {
     width: 100%;
-    object-fit: cover;
+    height: 100%;
   }
-  
   .cartDetails {
     display: flex;
     flex-direction: column;

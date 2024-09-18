@@ -1,6 +1,5 @@
 footer {
   display: flex;
-  /* padding: 3rem 1rem 2.375rem; */
   justify-content: center;
   align-items: center;
 }
@@ -23,7 +22,7 @@ footer {
 .left {
   display: flex;
   flex-direction: column;
-  row-gap: 3rem;
+  row-gap: 2rem;
 }
 .right {
   display: flex;
@@ -37,7 +36,7 @@ footer {
 .links {
   display: flex;
   flex-direction: column;
-  row-gap: 3.9rem;
+  row-gap: 2.5rem;
 }
 .navList {
   display: flex;
@@ -72,10 +71,11 @@ h5 {
 .subscribe {
   display: flex;
   flex-direction: column;
-  row-gap: 3.5rem;
+  row-gap: 1.5rem;
 }
 .inputGroup {
   display: flex;
+  flex-wrap: wrap;
   column-gap: 2rem;
 }
 .input {
@@ -122,9 +122,6 @@ h5 {
   }
   .footerLinks {
       column-gap: 5rem;
-  }
-  .inputGroup{
-      width: 17.87519rem;
   }
 }
 @media screen and (min-width:992px) {

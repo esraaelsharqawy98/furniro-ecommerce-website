@@ -1,12 +1,12 @@
 .productsList {
   width: 100%;
-  padding-bottom: 15rem;
+  padding-bottom: 6.25rem;
 }
 .container {
   padding: 1.5rem 1rem 2.5rem;
   max-width: 1440px;
+  margin: auto;
   width: 100%;
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;

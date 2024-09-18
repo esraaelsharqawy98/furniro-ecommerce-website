@@ -23,13 +23,12 @@ const ProductItem = ({ product }) => {
   };
   }
   return (
-    <div className={styles.product} role="region" aria-labelledby={`product-${product.id}`}>
+    <div className={styles.product}>
       <div className={styles.productImg}>
         <img src={product.image} alt={product.title} />
         <div className={styles.overlay}>
           <button
             className={styles.addToCart}
-            aria-label={`Add ${product.title} to cart`}
             onClick={handleAddToCart}
           >
             Add To Cart
@@ -41,7 +40,6 @@ const ProductItem = ({ product }) => {
           to={`/product/${product.id}`}
           className={styles.link}
           onClick={handleProductSelect}
-          aria-labelledby={`product-title-${product.id}`}
         >
           <h2 id={`product-title-${product.id}`} className={styles.productTitle}>
             {product.title}

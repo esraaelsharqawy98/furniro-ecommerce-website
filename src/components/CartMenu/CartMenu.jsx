@@ -51,7 +51,7 @@ const CartMenu = ({ isCartMenuOpen, toggleCartMenu }) => {
           className={styles.overlay} 
           onClick={toggleCartMenu}
           aria-label="Close Cart Menu"
-        />
+        ></div>
       )}
     </>
   );

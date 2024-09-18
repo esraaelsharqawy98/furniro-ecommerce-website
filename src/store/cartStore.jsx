@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 const calculateTotals = (cartItems) => {
-  const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
   return {
     subtotal,
     total: subtotal,

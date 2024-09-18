@@ -2,9 +2,7 @@
   width: 100%;
 }
 .container {
-  max-width: 1440px;
   width: 100%;
-  margin: 0 auto;
   padding: 6.12rem 1rem 3rem;
   display: flex;
   flex-direction: column;
@@ -38,9 +36,9 @@
 .info {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   row-gap: 2.5rem;
-  padding: 0 3rem;
+  padding: 0 3rem 5rem;
 }
 .contactInfoItem {
   display: flex;

@@ -21,26 +21,25 @@ const Header = () => {
   };
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen((prevState) => !prevState);
+    setIsMobileMenuOpen((prevState) => !prevState); 
   };
 
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-      <button
+        <button
           className={styles.mobileMenuButton}
-          aria-expanded={isMobileMenuOpen}
-          aria-controls="mobile-menu"
-          aria-label="Toggle Mobile Menu"
           onClick={toggleMobileMenu}
         >
           <FaAlignLeft />
         </button>
+
         <div className={styles.logo}>
           <img src={LogoImg} alt="Funiro logo" className={styles.logoImg} />
-          <h1 className="sr-only">Funiro</h1>
+          <h1>Funiro</h1>
         </div>
-        <nav aria-label="Primary Navigation">
+
+        <nav  className={styles.desktopNav}>
           <ul className={styles.navList}>
             <li>
               <Link to="/" className={styles.navLink}>
@@ -59,22 +58,23 @@ const Header = () => {
             </li>
           </ul>
         </nav>
+
         <button
           onClick={toggleCartMenu}
           className={styles.cartButton}
-          aria-expanded={isCartMenuOpen}
-          aria-controls="cart-menu"
-          aria-label="Toggle Cart Menu"
         >
-          {!isCartPage && cartItems.length > 0 && (
+          {cartItems.length > 0 && (
             <span className={styles.cartCount}>{cartItems.length}</span>
           )}
           <img src={CartIcon} alt="Shopping cart" className={styles.cartImg} />
         </button>
 
-        <CartMenu isCartMenuOpen={isCartMenuOpen} toggleCartMenu={toggleCartMenu} />
+        <CartMenu
+          isCartMenuOpen={isCartMenuOpen}
+          toggleCartMenu={toggleCartMenu}
+        />
 
-        {isMobileMenuOpen && <MobileMenu  isMobileMenuOpen={isMobileMenuOpen} toggleMobileMenu={toggleMobileMenu}/>}
+        <MobileMenu isMobileMenuOpen={isMobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
       </div>
     </header>
   );

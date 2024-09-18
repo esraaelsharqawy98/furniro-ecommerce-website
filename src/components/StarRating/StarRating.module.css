@@ -6,8 +6,7 @@
 .star {
   width: 1.25rem;
   height: 1.25rem;
-  color: var(--yellow);
-   
+  fill: var(--yellow);
 }
 .count {
   color: var(--dark-gray);

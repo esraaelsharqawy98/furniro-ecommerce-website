@@ -22,6 +22,10 @@ html, body{
     --ff-1:'Montserrat', sans-serif;
     --ff-2:'Poppins', sans-serif;
 }
+body{
+    font-size: 1rem;
+    line-height: 1.5;
+}
 *{
    margin: 0;
    padding: 0;

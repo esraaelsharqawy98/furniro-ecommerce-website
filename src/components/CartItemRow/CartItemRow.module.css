@@ -1,25 +1,25 @@
-td {
-  vertical-align: top;
-  height: fit-content;
+.cartItem{
+  margin-bottom: 2rem;
 }
-table .title,
-table .price,
-table .quantity,
-table .subtotal {
+
+.title,
+.price,
+.quantity,
+.subtotal {
   color: var(--dark-gray);
   font-family: var(--ff-2);
   font-size: 1rem;
   font-weight: 400;
 }
-table .title,
-table .price,
-table .quantity,
-table .subtotal,
-table .delete,
-table .image {
+.title,
+.price,
+.quantity,
+.subtotal,
+.delete,
+.image {
   margin: 3rem 0 0;
 }
-table .quantity {
+.quantity {
   width: 2rem;
   height: 2rem;
   display: flex;
@@ -44,27 +44,26 @@ table .quantity {
 }
 
 @media screen and (max-width: 768px) {
-  table .title,
-  table .price,
-  table .quantity,
-  table .subtotal,
-  table .delete {
-    margin: 0 0 1rem;
+  .title,
+  .price,
+  .quantity,
+  .subtotal,
+  .delete {
+    margin: 0 0 0.5rem;
   }
-  table .title {
+  .title {
     width: 12rem;
   }
-  table tbody td:not(.cartImg) {
+  .cartTitle , .cartPrice , .cartQuantity , .cartSubtotal , .cartButton {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
   }
-  tbody > tr {
+  .cartItem {
     display: block;
     position: relative;
     padding-left: 120px;
   }
-  tbody .cartImg {
+  .cartImg {
     width: 100px;
     height: 100px;
     position: absolute;
@@ -72,12 +71,9 @@ table .quantity {
     left: 0;
     padding: 0;
   }
-  table .image {
+  .image {
     width: 100%;
     height: 100%;
-    margin: 0;
-  }
-  table .quantity {
     margin: 0;
   }
   .deleteBtn {
@@ -85,19 +81,35 @@ table .quantity {
     top: 0;
     right: 0;
   }
+}@media screen and (min-width: 576px) {
+  .title{
+    width: 20rem;
+  }
+  .cartImg {
+    width: 120px;
+    height: 120px;
+  }
+  .cartItem {
+    padding-left: 150px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .title{
+    width: 11rem;
+  }
 }
 @media screen and (min-width: 1200px) {
-  table .image {
+  .image {
     width: 4.5625rem;
     height: 4.5625rem;
   }
-  table .title {
+  .title {
     width: 15rem;
   }
 }
 
 @media screen and (min-width: 1400px) {
-  table .image {
+  .image {
     width: 6.5625rem;
     height: 6.5625rem;
   }
