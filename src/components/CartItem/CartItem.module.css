@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: column;
   }
-  
   .btn {
     width: 24px;
     height: 24px;
@@ -17,10 +16,12 @@
     width: 4.625rem;
     height: 4.625rem;
     border-radius: 0.625rem;
-    background: rgba(184, 142, 47, 0.22);
     overflow: hidden;
   }
-  
+  .cartImage a{
+      width: 100%;
+      height: 100%;
+  }
   .cartImage img {
     width: 100%;
     height: 100%;
