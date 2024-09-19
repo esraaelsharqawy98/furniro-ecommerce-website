@@ -18,6 +18,9 @@ th {
 .headerImg {
   width: 6.25rem;
 }
+.headerProduct{
+  width: 0;
+}
 .cartButton{
   width: 13.875rem;
   height: 3.68463rem;
@@ -69,9 +72,6 @@ th {
   tbody {
     display: block;
   }
-}
-@media screen and (min-width: 768px) {
-  
 }
 @media screen and (min-width: 1200px) {
   table {

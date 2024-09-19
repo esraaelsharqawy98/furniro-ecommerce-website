@@ -12,7 +12,7 @@ const CartTable = () => {
       <thead>
         <tr>
           <th className={styles.headerImg}></th>
-          <th>Product</th>
+          <th className={styles.headerProduct}>Product</th>
           <th>Price</th>
           <th className={styles.headerQty}>Quantity</th>
           <th>SubTotal</th>

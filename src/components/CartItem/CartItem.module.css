@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    row-gap: .5rem;
   }
   .btn {
     width: 24px;
@@ -13,8 +14,8 @@
     column-gap: 1rem;
   }
   .cartImage {
-    width: 4.625rem;
-    height: 4.625rem;
+    width: 74px;
+    height: 74px;
     border-radius: 0.625rem;
     overflow: hidden;
   }
@@ -30,6 +31,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex: 1 1;
   }
   
   .productName {
@@ -55,12 +57,12 @@
   
   @media screen and (min-width: 576px) {
     .cartItem {
-      column-gap: 1.5rem;
+      row-gap: 0;
     }
   
     .cartImage {
-      width: 6.5625rem;
-      height: 6.5625rem;
+      width: 105px;
+      height: 105px;
     }
   
     .productName,
