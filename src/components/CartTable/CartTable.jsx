@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./CartTable.module.css";
 import { useCartStore } from "../../store/cartStore";
 import CartItemRow from "../CartItemRow/CartItemRow";
-import { Link } from "react-router-dom";
 
 const CartTable = () => {
   const { cartItems, removeItem } = useCartStore();

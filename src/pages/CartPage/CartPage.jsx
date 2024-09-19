@@ -17,7 +17,7 @@ const CartPage = () => {
             <CartTable />
           ) : (
             <div className={styles.empty}>
-              <p>No products yet</p>
+              <p>Cart is empty</p>
             </div>
           )}
           <div className={styles.cartTotals}>
