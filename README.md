@@ -29,12 +29,12 @@ To get started with this project, follow these steps:
 
    1. Clone the Repository
 ```bash
- git clone https://github.com/your-username/ecommerce-react-app.git
+ git clone https://github.com/esraaelsharqawy98/furniro-ecommerce-website.git
 ```
 2. Navigate to the Project Directory
 
 ```bash
-cd ecommerce-react-app
+cd furniro-ecommerce-website
 ```
 3. Install Dependencies
 
