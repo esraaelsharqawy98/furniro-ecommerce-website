@@ -3,7 +3,7 @@
     bottom: 20px;
     right: 20px;
     background-color: #333;
-    color: #fff;
+    color: var(--white);
     padding: 16px;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -16,19 +16,22 @@
     justify-content: space-between;
     min-width: 300px;
   }
-  
   .toastMessage {
     flex: 1;
-    padding-right: 20px;
-    font-family: var(--ff-2);
-    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
   }
-  
+  .toastMessage p{
+    font-family: var(--ff-2);
+    font-size: .9rem;
+  }
   .closeButton {
     cursor: pointer;
-    color: #fff;
-    font-size: 18px;
+    color: var(--white);
+    font-size: 1.2rem;
     margin-left: 10px;
+    align-self: flex-end;
   }
   
   .progress {

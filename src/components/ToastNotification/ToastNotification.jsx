@@ -22,10 +22,10 @@ const ToastNotification = ({ message, duration = 3000, onClose }) => {
   return (
     <div className={styles.toastContainer}>
       <div className={styles.toastMessage}>
-        {message}
         <button className={styles.closeButton} onClick={onClose}>
           ×
         </button>
+        <p>{message}</p>
       </div>
       <div className={styles.progressBar}>
         <div
