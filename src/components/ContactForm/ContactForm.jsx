@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import contactValidationSchema from '../../validators/contactValidation';
 import styles from './ContactForm.module.css';
+import ToastNotification from '../ToastNotification/ToastNotification';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ const ContactForm = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [showToast, setShowToast] = useState(false);
 
   const validate = async () => {
     try {
@@ -44,14 +46,23 @@ const ContactForm = () => {
         subject: '',
         message: ''
       });
+      setShowToast(true); 
     }
+    
   };
-
   const getInputClassName = (inputName) => {
     return errors[inputName] ? `${styles.input} ${styles.inputError}` : styles.input;
   };
 
   return (
+    <>
+    {showToast && (
+      <ToastNotification
+        message="your data has been sent successfully!"
+        duration={3000}
+        onClose={() => setShowToast(false)}
+      />
+    )}
     <form onSubmit={handleOnSubmit} className={styles.contactForm}>
       <div className={styles.formGroup}>
         <label htmlFor="name" className={styles.label}>Your name</label>
@@ -112,6 +123,7 @@ const ContactForm = () => {
 
       <button type="submit" className={styles.submitButton}>Submit</button>
     </form>
+    </>
   );
 };
 

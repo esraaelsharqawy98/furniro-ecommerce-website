@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './ToastNotification.module.css';
 
-const ToastNotification = ({ duration = 3000, onClose }) => {
+const ToastNotification = ({ message, duration = 3000, onClose }) => {
   const [progress, setProgress] = useState(100);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const ToastNotification = ({ duration = 3000, onClose }) => {
   return (
     <div className={styles.toastContainer}>
       <div className={styles.toastMessage}>
-        this product has been added successfully!
+        {message}
         <button className={styles.closeButton} onClick={onClose}>
           ×
         </button>

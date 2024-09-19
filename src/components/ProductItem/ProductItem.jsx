@@ -56,6 +56,7 @@ const ProductItem = ({ product }) => {
       </div>
       {showToast && (
         <ToastNotification
+          message="this product has been added successfully!"
           duration={3000}
           onClose={() => setShowToast(false)}
         />

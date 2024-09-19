@@ -21,7 +21,6 @@ const ProductDetails = ({ product }) => {
     } else {
       addItem(product, quantity);
     }
-    console.log("Adding to cart, showing toast"); // Debug line
     setShowToast(true);
     setTimeout(() => setShowToast(false), 3000);
   };
@@ -31,6 +30,13 @@ const ProductDetails = ({ product }) => {
 
   return (
     <>
+    {
+      showToast && <ToastNotification
+      message="this product has been added successfully!"
+      duration={3000}
+      onClose={() => setShowToast(false)}
+    />
+    }
     <section className={styles.productInfo}>
       <h2 className={styles.title}>{product.title}</h2>
       <p className={styles.price}>Rs {formatCurrency(product.price)}</p>
@@ -51,12 +57,6 @@ const ProductDetails = ({ product }) => {
         Category <span>:</span> {product.category}
       </p>
     </section>
-    {
-      showToast && <ToastNotification
-      duration={3000}
-      onClose={() => setShowToast(false)}
-    />
-    }
     </>
   );
 };
