@@ -20,6 +20,8 @@
   .toastMessage {
     flex: 1;
     padding-right: 20px;
+    font-family: var(--ff-2);
+    font-size: 1rem;
   }
   
   .closeButton {
