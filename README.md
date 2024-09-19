@@ -50,14 +50,14 @@ This will start the Vite development server and open the application in your def
 
 ### Usage
 
-   - Development: Run npm run dev to start the development server and view the application locally.
-  - Build: Run npm run build to create a production build of the application.
-  - Preview: Run npm run preview to preview the production build locally.
+   - Development: Run ```npm run dev ``` to start the development server and view the application locally.
+  - Build: Run ```npm run build``` to create a production build of the application.
+  - Preview: Run ```npm run preview``` to preview the production build locally.
 
 ### Folder Structure
 
 ```less
-├── public/                         # public files  
+├── public/                      # public files  
 │   │
 │   ├── images/                                 
 ├── src/                         # Source files  
@@ -72,21 +72,39 @@ This will start the Vite development server and open the application in your def
 │   │   ├── CartItem/            # Individual cart item component
 │   │   │   ├── CartItem.jsx
 │   │   │   └── CartItem.module.css
-│   │   ├── Banner/              # Banner component
-│   │   │   ├── Banner.jsx
-│   │   │   └── Banner.module.css
+│   │   ├── MobileMenu/              # MobileMenu component
+│   │   │   ├── MobileMenu.jsx
+│   │   │   └── MobileMenu.module.css
 │   │   ├── ContactForm/              # ContactForm component
 │   │   │   ├── ContactForm.jsx
 │   │   │   └── ContactForm.module.css
+│   │   ├── Breadcrumb/                  # Breadcrumb component
+│   │   │   ├── Breadcrumb.jsx
+│   │   │   └── Breadcrumb.module.css
+│   │   ├── Banner/                  # Banner component
+│   │   │   ├── Banner.jsx
+│   │   │   └── Banner.module.css
+│   │   ├── ContactForm/              # Contact Form component
+│   │   │   ├── ContactForm.jsx
+│   │   │   └── ContactForm.module.css
+│   │   ├── CartItemRow/              # CartItemRow component
+│   │   │   ├── CartItemRow.jsx
+│   │   │   └── CartItemRow.module.css
 │   │   ├── CartTable/              # CartTable component
 │   │   │   ├── CartTable.jsx
 │   │   │   └── CartTable.module.css
-│   │   ├── StarRating/    # StarRating component
+│   │   ├── StarRating/             # StarRating component
 │   │   │   ├── StarRating.jsx
 │   │   │   └── StarRating.module.css
-│   │   ├── ProductDetails/  # Product details component
+│   │   ├── ProductDetails/        # Product details component
 │   │   │   ├── ProductDetails.jsx
 │   │   │   └── ProductDetails.module.css
+│   │   ├── ProductItem/        # Product Item component
+│   │   │   ├── ProductItem.jsx
+│   │   │   └── ProductItem.module.css
+│   │   ├── ToastNotification/     # Toast Notification component
+│   │   │   ├── ToastNotification.jsx
+│   │   │   └── ToastNotification.module.css
 │   │
 │   ├── layouts/                   # Layout components
 │   │   ├── Header/                # Header component
@@ -119,12 +137,15 @@ This will start the Vite development server and open the application in your def
 │   │       ├── ContactPage.jsx
 │   │       └── ContactPage.module.css
 │   │
-│   ├── validators/                      # validator
-│   │   └── ContactValidation.js         # Contact form validation with yup
+│   ├── validators/              # validator
+│   │   └── ContactValidation.js # Contact form validation with yup
+│   │
+│   ├── utils/                   #  utils
+│   │   └── formatCurrency.js    # formatCurrency
 │   │
 │   ├── store/                   # Zustand store
-│   │   └── cartStore.js         # Cart-specific state management
-│   │   └── productStore.js      # product-specific state management
+│   │   └── cartStore.jsx         # Cart-specific state management
+│   │   └── productStore.jsx      # product-specific state management
 │   ├── App.css                  # Main application styles
 │   ├── App.jsx                  # Main application component with routing
 │   ├── main.jsx                 # Entry point for Vite, rendering the App
@@ -144,7 +165,7 @@ This will start the Vite development server and open the application in your def
 
 ### Routing
 
-The application uses react-router-dom for routing. The routes are defined in App.jsx, with a central Layout component that includes common elements like Header and Footer.
+The application uses react-router-dom for routing. The routes are defined in App.jsx, with a central Layout component that includes common elements like Header , Features and Footer.
 State Management
 
 State management is handled using Zustand. The state stores for managing the cart and other application state are located in the store/ directory.
