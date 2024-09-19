@@ -1,20 +1,18 @@
-import React, { useState, useEffect } from "react";
-import styles from "./ProductDetails.module.css";
+import React, { useEffect, useState } from "react";
 import StarRating from "../StarRating/StarRating";
 import { useCartStore } from "../../store/cartStore";
 import { formatCurrency } from "../../utils/formatCurrency";
+import ToastNotification from "../ToastNotification/ToastNotification";
+import styles from "./ProductDetails.module.css";
 
 const ProductDetails = ({ product }) => {
   const { addItem, updateQuantity, cartItems } = useCartStore();
   const [quantity, setQuantity] = useState(1);
+  const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
     const productInCart = cartItems.find((item) => item.id === product.id);
-    if (productInCart) {
-      setQuantity(productInCart.quantity);
-    } else {
-      setQuantity(1);
-    }
+    setQuantity(productInCart ? productInCart.quantity : 1);
   }, [cartItems, product.id]);
 
   const handleAddToCart = () => {
@@ -23,46 +21,28 @@ const ProductDetails = ({ product }) => {
     } else {
       addItem(product, quantity);
     }
+    console.log("Adding to cart, showing toast"); // Debug line
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 3000);
   };
 
-  const handleIncreaseQuantity = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
-  };
-
-  const handleDecreaseQuantity = () => {
-    setQuantity((prevQuantity) => Math.max(1, prevQuantity - 1));
-  };
+  const handleIncreaseQuantity = () => setQuantity((prev) => prev + 1);
+  const handleDecreaseQuantity = () => setQuantity((prev) => Math.max(1, prev - 1));
 
   return (
+    <>
     <section className={styles.productInfo}>
-      <h2 className={styles.title}>
-        {product.title}
-      </h2>
+      <h2 className={styles.title}>{product.title}</h2>
       <p className={styles.price}>Rs {formatCurrency(product.price)}</p>
       <StarRating rating={product.rating.rate} count={product.rating.count} />
       <p className={styles.description}>{product.description}</p>
       <div className={styles.container}>
         <div className={styles.quantityContainer}>
-          <button
-            className={styles.quantityButton}
-            onClick={handleDecreaseQuantity}
-          >
-            -
-          </button>
-          <span className={styles.quantity}>
-            {quantity}
-          </span>
-          <button
-            className={styles.quantityButton}
-            onClick={handleIncreaseQuantity}
-          >
-            +
-          </button>
+          <button className={styles.quantityButton} onClick={handleDecreaseQuantity}>-</button>
+          <span className={styles.quantity}>{quantity}</span>
+          <button className={styles.quantityButton} onClick={handleIncreaseQuantity}>+</button>
         </div>
-        <button
-          className={styles.addToCart}
-          onClick={handleAddToCart}
-        >
+        <button className={styles.addToCart} onClick={handleAddToCart}>
           Add to cart
         </button>
       </div>
@@ -71,6 +51,13 @@ const ProductDetails = ({ product }) => {
         Category <span>:</span> {product.category}
       </p>
     </section>
+    {
+      showToast && <ToastNotification
+      duration={3000}
+      onClose={() => setShowToast(false)}
+    />
+    }
+    </>
   );
 };
 
