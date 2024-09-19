@@ -1,4 +1,3 @@
-// ToastNotification.js
 import React, { useEffect, useState } from 'react';
 import styles from './ToastNotification.module.css';
 
@@ -23,7 +22,7 @@ const ToastNotification = ({ duration = 3000, onClose }) => {
   return (
     <div className={styles.toastContainer}>
       <div className={styles.toastMessage}>
-        this product has been added to the cart!
+        this product has been added successfully!
         <button className={styles.closeButton} onClick={onClose}>
           ×
         </button>
